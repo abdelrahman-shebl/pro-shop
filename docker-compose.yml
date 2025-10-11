@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:6.0
+    restart: unless-stopped
+    volumes:
+      - mongodata:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d:ro
+    ports:
+      - '27017:27017'
+
+  web:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    depends_on:
+      - mongo
+    env_file:
+      - .env.docker
+    environment:
+      - NODE_ENV=production
+    ports:
+      - '5000:5000'
+    volumes:
+      - uploads:/var/data/uploads
+    restart: unless-stopped
+
+volumes:
+  mongodata:
+  uploads:
