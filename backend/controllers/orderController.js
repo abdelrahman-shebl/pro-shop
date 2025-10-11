@@ -52,6 +52,15 @@ const addOrderItems = asyncHandler(async (req, res) => {
     const { itemsPrice, taxPrice, shippingPrice, totalPrice } =
       calcPrices(dbOrderItems);
 
+    // debug: log the constructed order items to help diagnose validation errors
+    console.log('DEBUG dbOrderItems:', JSON.stringify(dbOrderItems));
+
+    // ensure the request is authenticated and contains a user
+    if (!req.user) {
+      res.status(401);
+      throw new Error('Not authorized, user not found');
+    }
+
     const order = new Order({
       orderItems: dbOrderItems,
       user: req.user._id,

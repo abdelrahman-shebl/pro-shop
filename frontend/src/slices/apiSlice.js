@@ -10,6 +10,8 @@ import { logout } from './authSlice'; // Import the logout action
 
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
+  // ensure cookies are sent with requests so our cookie-based JWT auth works
+  credentials: 'include',
 });
 
 async function baseQueryWithAuth(args, api, extra) {
