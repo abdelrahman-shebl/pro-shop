@@ -1,7 +1,5 @@
-import { Row, Col } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useGetProductsQuery } from '../slices/productsApiSlice';
-import { Link } from 'react-router-dom';
 import Product from '../components/Product';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
@@ -11,7 +9,6 @@ import Meta from '../components/Meta';
 
 const HomeScreen = () => {
   const { pageNumber, keyword } = useParams();
-
   const { data, isLoading, error } = useGetProductsQuery({
     keyword,
     pageNumber,
@@ -22,7 +19,10 @@ const HomeScreen = () => {
       {!keyword ? (
         <ProductCarousel />
       ) : (
-        <Link to='/' className='btn btn-light mb-4'>
+        <Link
+          to='/'
+          className='inline-flex items-center gap-2 mb-6 px-4 py-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition'
+        >
           Go Back
         </Link>
       )}
@@ -35,14 +35,14 @@ const HomeScreen = () => {
       ) : (
         <>
           <Meta />
-          <h1>Latest Products</h1>
-          <Row>
+          <h1 className='text-3xl font-bold mb-8 text-gray-900 dark:text-white'>
+            Latest Products
+          </h1>
+          <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
             {data.products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                <Product product={product} />
-              </Col>
+              <Product key={product._id} product={product} />
             ))}
-          </Row>
+          </div>
           <Paginate
             pages={data.pages}
             page={data.page}
