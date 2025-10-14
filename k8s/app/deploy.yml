@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proshop-deploy
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: myapp
+          image: pro-shop-web
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          env:
+            - name: MONGO_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-config
+                  key: mongo_user
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  key: mongo_password
+            - name: MONGO_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-config
+                  key: Mongo_DB
+            - name: MONGO_URI
+              value: mongodb://$(MONGO_USER):$(MONGO_PASSWORD)@mongo-0.mongo:27017/$(MONGO_DB)?authSource=admin
+          envFrom:
+            - configMapRef:
+                name: proshop-config
+            - secretRef:
+                name: proshop-secret
