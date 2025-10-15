@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: proshop-config
+data:
+  PORT: "5000"
+  PAYPAL_API_URL: "https://api-m.sandbox.paypal.com"
+  SEED_ON_START: "true"
+  # # Cookie settings to control secure and sameSite behavior inside k8s/local clusters
+  # COOKIE_SECURE: "false"
+  # COOKIE_SAMESITE: "Lax"

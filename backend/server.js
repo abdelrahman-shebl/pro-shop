@@ -24,6 +24,9 @@ if (shouldSeed) {
 
 const app = express();
 
+// If running behind a proxy (ingress), enable trust proxy so req.secure and x-forwarded-proto work
+app.enable('trust proxy');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());

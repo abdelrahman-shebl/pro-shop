@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - deployments/deployment.yaml
+  - services/front-svc.yaml
+  - services/mongo-svc.yaml
+  - statefulsets/mongo-statefulset.yaml
+  - config-maps/proshop-config.yaml
+  - config-maps/mongo-init-configmap.yaml
+  - secrets/proshop-secret.yaml

@@ -10,8 +10,10 @@ services:
       - '27017:27017'
 
   web:
+    image: pro-shop-web
     build:
       context: .
+      
       dockerfile: backend/Dockerfile
     depends_on:
       - mongo
@@ -21,10 +23,7 @@ services:
       - NODE_ENV=production
     ports:
       - '5000:5000'
-    volumes:
-      - uploads:/var/data/uploads
     restart: unless-stopped
 
 volumes:
   mongodata:
-  uploads:
