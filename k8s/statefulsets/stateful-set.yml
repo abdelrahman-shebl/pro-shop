@@ -4,7 +4,6 @@ metadata:
   name: mongo
   labels:
     app: mongo
-
 spec:
   serviceName: db-svc
   replicas: 1
@@ -19,31 +18,29 @@ spec:
       containers:
         - name: mongo
           image: mongo:6.0
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 27017
               name: mongo
           envFrom:
             - secretRef:
                 name: mongo-secret
-
-
-          volumeMounts: 
-            - name: mongo-data 
+          volumeMounts:
+            - name: mongo-data
               mountPath: /data/db
-            - name: mongo-init 
-              mountPath: /docker-entrypoint-initdb.d/
+            - name: mongo-init-script
+              mountPath: /docker-entrypoint-initdb.d/init.js
+              subPath: init.js
               readOnly: true
       volumes:
-        - name: mongo-init
+        - name: mongo-init-script
           configMap:
             name: mongo-init-script
-
-  volumeClaimTemplates: 
+  volumeClaimTemplates:
     - metadata:
-        name: mongo-data 
+        name: mongo-data
       spec:
-        accessModes: ["ReadWriteOnce"] 
+        accessModes: ["ReadWriteOnce"]
         resources:
           requests:
-            storage: 300Mi
+            storage: 1Gi
