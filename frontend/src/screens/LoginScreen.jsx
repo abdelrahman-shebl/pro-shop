@@ -47,10 +47,10 @@ const LoginScreen = () => {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-4">
             <LogIn className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+          <h1 className="text-3xl font-bold text-black-900 dark:text-black">
             Sign In
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 mt-2">
+          <p className="text-black-600 dark:text-black-400 mt-2">
             Welcome back! Please login to your account.
           </p>
         </div>
@@ -61,19 +61,19 @@ const LoginScreen = () => {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              className="block text-sm font-medium text-black-700 dark:text-black-300 mb-2"
             >
               Email Address
             </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-black-400" />
               <input
                 type="email"
                 id="email"
                 placeholder="Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 dark:text-white"
+                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-black-900 dark:text-black"
               />
             </div>
           </div>
@@ -81,19 +81,19 @@ const LoginScreen = () => {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              className="block text-sm font-medium text-black-700 dark:text-black-300 mb-2"
             >
               Password
             </label>
             <div className="relative">
-              <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-black-400" />
               <input
                 type="password"
                 id="password"
                 placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 dark:text-white"
+                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-black-900 dark:text-black"
               />
             </div>
           </div>
@@ -108,7 +108,7 @@ const LoginScreen = () => {
         </form>
 
         <div className="mt-6 text-center">
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-black-600 dark:text-black-400">
             New Customer?{' '}
             <Link
               to={redirect ? `/register?redirect=${redirect}` : '/register'}

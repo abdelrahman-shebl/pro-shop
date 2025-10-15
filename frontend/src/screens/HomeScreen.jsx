@@ -21,7 +21,7 @@ const HomeScreen = () => {
       ) : (
         <Link
           to='/'
-          className='inline-flex items-center gap-2 mb-6 px-4 py-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition'
+          className='inline-flex items-center gap-2 mb-6 px-4 py-2 text-black-700 dark:text-black-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition'
         >
           Go Back
         </Link>
@@ -35,7 +35,7 @@ const HomeScreen = () => {
       ) : (
         <>
           <Meta />
-          <h1 className='text-3xl font-bold mb-8 text-gray-900 dark:text-white'>
+          <h1 className='text-3xl font-bold mb-8 text-black-900 dark:text-black'>
             Latest Products
           </h1>
           <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>

@@ -11,13 +11,13 @@ const Rating = ({ value, text }) => {
             ) : value >= index - 0.5 ? (
               <StarHalf className='w-4 h-4 fill-yellow-400 text-yellow-400' />
             ) : (
-              <Star className='w-4 h-4 text-gray-300 dark:text-gray-600' />
+              <Star className='w-4 h-4 text-black-300 dark:text-black-600' />
             )}
           </span>
         ))}
       </div>
       {text && (
-        <span className='text-sm text-gray-600 dark:text-gray-400'>
+        <span className='text-sm text-black-600 dark:text-black-400'>
           {text}
         </span>
       )}

@@ -13,7 +13,7 @@ const Product = ({ product }) => {
       </Link>
       <div className='p-4'>
         <Link to={`/product/${product._id}`}>
-        <h3 className='font-semibold text-lg mb-2 text-gray-900 dark:text-black hover:text-indigo-600 transition line-clamp-2 h-14'>
+        <h3 className='font-semibold text-lg mb-2 text-black-900 dark:text-black hover:text-indigo-600 transition line-clamp-2 h-14'>
           {product.name}
         </h3>
         </Link>

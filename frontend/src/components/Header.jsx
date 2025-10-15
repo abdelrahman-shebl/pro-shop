@@ -89,7 +89,7 @@ const Header = () => {
             
             <Link
               to='/cart'
-              className='flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition relative'
+              className='flex items-center gap-2 text-black-700 dark:text-black-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition relative'
             >
               <ShoppingCart className='w-5 h-5' />
               Cart
@@ -104,7 +104,7 @@ const Header = () => {
               <div className='relative' ref={userDropdownRef}>
                 <button 
                   onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                  className='flex items-center gap-2 px-3 py-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition'
+                  className='flex items-center gap-2 px-3 py-2 text-black-700 dark:text-black-300 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition'
                 >
                   <div className='w-8 h-8 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center'>
                     <User className='w-5 h-5 text-indigo-600 dark:text-indigo-400' />
@@ -124,10 +124,10 @@ const Header = () => {
                           </span>
                         </div>
                         <div className='flex-1 min-w-0'>
-                          <p className='text-sm font-semibold text-gray-900 dark:text-white truncate'>
+                          <p className='text-sm font-semibold text-black-900 dark:text-black truncate'>
                             {userInfo.name}
                           </p>
-                          <p className='text-xs text-gray-500 dark:text-gray-400 truncate'>
+                          <p className='text-xs text-black-500 dark:text-black-400 truncate'>
                             {userInfo.email}
                           </p>
                         </div>
@@ -139,18 +139,18 @@ const Header = () => {
                       <Link
                         to='/profile'
                         onClick={() => setUserDropdownOpen(false)}
-                        className='flex items-center gap-3 px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition group'
+                        className='flex items-center gap-3 px-4 py-2.5 text-black-700 dark:text-black-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition group'
                       >
-                        <Settings className='w-5 h-5 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition' />
+                        <Settings className='w-5 h-5 text-black-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition' />
                         <span className='font-medium'>My Profile</span>
                       </Link>
 
                       <Link
                         to='/profile'
                         onClick={() => setUserDropdownOpen(false)}
-                        className='flex items-center gap-3 px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition group'
+                        className='flex items-center gap-3 px-4 py-2.5 text-black-700 dark:text-black-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition group'
                       >
-                        <ShoppingBag className='w-5 h-5 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition' />
+                        <ShoppingBag className='w-5 h-5 text-black-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition' />
                         <span className='font-medium'>My Orders</span>
                       </Link>
                     </div>
@@ -174,7 +174,7 @@ const Header = () => {
             ) : (
               <Link
                 to='/login'
-                className='flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition'
+                className='flex items-center gap-2 text-black-700 dark:text-black-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition'
               >
                 <User className='w-5 h-5' />
                 Sign In
@@ -185,7 +185,7 @@ const Header = () => {
               <div className='relative' ref={adminDropdownRef}>
                 <button 
                   onClick={() => setAdminDropdownOpen(!adminDropdownOpen)}
-                  className='flex items-center gap-2 px-3 py-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition'
+                  className='flex items-center gap-2 px-3 py-2 text-black-700 dark:text-black-300 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition'
                 >
                   <Settings className='w-5 h-5' />
                   Admin
@@ -197,21 +197,21 @@ const Header = () => {
                     <Link
                       to='/admin/productlist'
                       onClick={() => setAdminDropdownOpen(false)}
-                      className='block px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition'
+                      className='block px-4 py-2.5 text-black-700 dark:text-black-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition'
                     >
                       Products
                     </Link>
                     <Link
                       to='/admin/orderlist'
                       onClick={() => setAdminDropdownOpen(false)}
-                      className='block px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition'
+                      className='block px-4 py-2.5 text-black-700 dark:text-black-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition'
                     >
                       Orders
                     </Link>
                     <Link
                       to='/admin/userlist'
                       onClick={() => setAdminDropdownOpen(false)}
-                      className='block px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition'
+                      className='block px-4 py-2.5 text-black-700 dark:text-black-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition'
                     >
                       Users
                     </Link>
@@ -229,7 +229,7 @@ const Header = () => {
               {darkMode ? (
                 <Sun className='w-5 h-5 text-yellow-400' />
               ) : (
-                <Moon className='w-5 h-5 text-gray-600' />
+                <Moon className='w-5 h-5 text-black-600' />
               )}
             </button>
           </nav>
@@ -240,9 +240,9 @@ const Header = () => {
             className='lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition'
           >
             {menuOpen ? (
-              <X className='w-6 h-6 text-gray-700 dark:text-gray-300' />
+              <X className='w-6 h-6 text-black-700 dark:text-black-300' />
             ) : (
-              <Menu className='w-6 h-6 text-gray-700 dark:text-gray-300' />
+              <Menu className='w-6 h-6 text-black-700 dark:text-black-300' />
             )}
           </button>
         </div>
@@ -255,7 +255,7 @@ const Header = () => {
               
               <Link
                 to='/cart'
-                className='flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
+                className='flex items-center gap-2 text-black-700 dark:text-black-300 hover:text-indigo-600 dark:hover:text-indigo-400'
                 onClick={() => setMenuOpen(false)}
               >
                 <ShoppingCart className='w-5 h-5' />
@@ -277,10 +277,10 @@ const Header = () => {
                         </span>
                       </div>
                       <div className='flex-1 min-w-0'>
-                        <p className='text-sm font-semibold text-gray-900 dark:text-white truncate'>
+                        <p className='text-sm font-semibold text-black-900 dark:text-black truncate'>
                           {userInfo.name}
                         </p>
-                        <p className='text-xs text-gray-500 dark:text-gray-400 truncate'>
+                        <p className='text-xs text-black-500 dark:text-black-400 truncate'>
                           {userInfo.email}
                         </p>
                       </div>
@@ -289,7 +289,7 @@ const Header = () => {
                   
                   <Link
                     to='/profile'
-                    className='flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
+                    className='flex items-center gap-2 text-black-700 dark:text-black-300 hover:text-indigo-600 dark:hover:text-indigo-400'
                     onClick={() => setMenuOpen(false)}
                   >
                     <Settings className='w-5 h-5' />
@@ -298,7 +298,7 @@ const Header = () => {
                   
                   <Link
                     to='/profile'
-                    className='flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
+                    className='flex items-center gap-2 text-black-700 dark:text-black-300 hover:text-indigo-600 dark:hover:text-indigo-400'
                     onClick={() => setMenuOpen(false)}
                   >
                     <ShoppingBag className='w-5 h-5' />
@@ -319,7 +319,7 @@ const Header = () => {
               ) : (
                 <Link
                   to='/login'
-                  className='flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
+                  className='flex items-center gap-2 text-black-700 dark:text-black-300 hover:text-indigo-600 dark:hover:text-indigo-400'
                   onClick={() => setMenuOpen(false)}
                 >
                   <User className='w-5 h-5' />
@@ -330,12 +330,12 @@ const Header = () => {
               {userInfo && userInfo.isAdmin && (
                 <>
                   <div className='border-t border-gray-200 dark:border-gray-700 pt-4 mt-2'>
-                    <p className='text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2'>
+                    <p className='text-sm font-semibold text-black-500 dark:text-black-400 mb-2'>
                       Admin Menu
                     </p>
                     <Link
                       to='/admin/productlist'
-                      className='flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 mb-2'
+                      className='flex items-center gap-2 text-black-700 dark:text-black-300 hover:text-indigo-600 dark:hover:text-indigo-400 mb-2'
                       onClick={() => setMenuOpen(false)}
                     >
                       <Package className='w-5 h-5' />
@@ -343,7 +343,7 @@ const Header = () => {
                     </Link>
                     <Link
                       to='/admin/orderlist'
-                      className='flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 mb-2'
+                      className='flex items-center gap-2 text-black-700 dark:text-black-300 hover:text-indigo-600 dark:hover:text-indigo-400 mb-2'
                       onClick={() => setMenuOpen(false)}
                     >
                       <ShoppingBag className='w-5 h-5' />
@@ -351,7 +351,7 @@ const Header = () => {
                     </Link>
                     <Link
                       to='/admin/userlist'
-                      className='flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
+                      className='flex items-center gap-2 text-black-700 dark:text-black-300 hover:text-indigo-600 dark:hover:text-indigo-400'
                       onClick={() => setMenuOpen(false)}
                     >
                       <User className='w-5 h-5' />
@@ -364,7 +364,7 @@ const Header = () => {
               {/* Theme Toggle - Mobile */}
               <button
                 onClick={toggleTheme}
-                className='flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
+                className='flex items-center gap-2 text-black-700 dark:text-black-300 hover:text-indigo-600 dark:hover:text-indigo-400'
               >
                 {darkMode ? (
                   <>

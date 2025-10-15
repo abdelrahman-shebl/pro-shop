@@ -26,13 +26,13 @@ const CartScreen = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+      <h1 className="text-3xl font-bold mb-8 text-black-900 dark:text-black">
         Shopping Cart
       </h1>
 
       {cartItems.length === 0 ? (
         <div className="text-center py-12">
-          <ShoppingBag className="w-24 h-24 mx-auto text-gray-300 dark:text-gray-600 mb-4" />
+          <ShoppingBag className="w-24 h-24 mx-auto text-black-300 dark:text-black-600 mb-4" />
           <Message variant="info">
             Your cart is empty.{' '}
             <Link to="/" className="font-semibold underline">
@@ -58,7 +58,7 @@ const CartScreen = () => {
                 <div className="flex-1 text-center sm:text-left">
                   <Link
                     to={`/product/${item._id}`}
-                    className="text-lg font-semibold text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400"
+                    className="text-lg font-semibold text-black-900 dark:text-black hover:text-indigo-600 dark:hover:text-indigo-400"
                   >
                     {item.name}
                   </Link>
@@ -73,7 +73,7 @@ const CartScreen = () => {
                     onChange={(e) =>
                       addToCartHandler(item, Number(e.target.value))
                     }
-                    className="px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500"
+                    className="px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-black-900 dark:text-black focus:ring-2 focus:ring-indigo-500"
                   >
                     {[...Array(item.countInStock).keys()].map((x) => (
                       <option key={x + 1} value={x + 1}>
@@ -96,18 +96,18 @@ const CartScreen = () => {
           {/* Order Summary */}
           <div className="lg:col-span-1">
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sticky top-24">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+              <h2 className="text-2xl font-bold mb-6 text-black-900 dark:text-black">
                 Order Summary
               </h2>
 
               <div className="space-y-4 mb-6">
-                <div className="flex justify-between text-gray-600 dark:text-gray-400">
+                <div className="flex justify-between text-black-600 dark:text-black-400">
                   <span>Items ({cartItems.reduce((acc, item) => acc + item.qty, 0)})</span>
                 </div>
 
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <span className="text-lg font-semibold text-black-900 dark:text-black">
                       Subtotal
                     </span>
                     <span className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
