@@ -13,9 +13,9 @@ const Product = ({ product }) => {
       </Link>
       <div className='p-4'>
         <Link to={`/product/${product._id}`}>
-          <h3 className='font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition line-clamp-2 h-14'>
-            {product.name}
-          </h3>
+        <h3 className='font-semibold text-lg mb-2 text-gray-900 dark:text-black hover:text-indigo-600 transition line-clamp-2 h-14'>
+          {product.name}
+        </h3>
         </Link>
         <Rating value={product.rating} text={`${product.numReviews} reviews`} />
         <div className='text-xl font-bold mt-2 text-indigo-600 dark:text-indigo-400'>
